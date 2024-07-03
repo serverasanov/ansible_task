@@ -1,0 +1,21 @@
+---
+- name: Copy php_file in server
+  copy: src=index.php dest={{ destin_php_file }} mode=0777
+
+- name: Copy docker_compose_file in server
+  copy: src=docker-compose.yml dest={{ destin_docker_compose_file }} mode=0777
+
+- name: Generate nginx_conf in server
+  template: src=app-dev.js dest={{ destin_nginx_conf }}/app-dev.conf mode=0777
+  notify:
+    - Stop Nginx
+    - Start Nginx
+
+- name: Copy Dockerfile in server
+  copy: src=Dockerfile dest={{ destin_Dockerfile }} mode=0777
+
+- name: Copy php.ini in server
+  copy: src=php.ini dest={{ destin_php_ini }} mode=0777
+
+- name: Copy my.cnf in server
+  copy: src=my.cnf dest={{ destin_my_cnf }} mode=0777

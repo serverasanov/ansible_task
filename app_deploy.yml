@@ -1,0 +1,14 @@
+---
+- name: app_deploy
+  hosts: all
+  become: yes
+  gather_facts: no
+  roles:
+    - app_file_distribute
+  tasks:
+
+  - name: UP
+    community.docker.docker_compose_v2:
+      project_src: /home/sumon/app
+
+

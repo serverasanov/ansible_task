@@ -1,0 +1,7 @@
+---
+destin_php_file: /home/sumon/app/www/app.dev
+destin_docker_compose_file: /home/sumon/app
+destin_Dockerfile: /home/sumon/app/images/php
+destin_nginx_conf: /home/sumon/app/hosts
+destin_php_ini: /home/sumon/app/images/php
+destin_my_cnf: /etc/mysql/conf.d

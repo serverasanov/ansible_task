@@ -1,0 +1,9 @@
+---
+- name: Stop Nginx
+  ansible.builtin.shell: docker stop app-nginx-1
+  args:
+     chdir: /home/sumon/app
+- name: Start Nginx
+  ansible.builtin.shell: docker start app-nginx-1
+  args:
+     chdir: /home/sumon/app
